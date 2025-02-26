@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paneer Posting - Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 32px;
+            font-weight: lighter;
+            color: #007bff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            font-family: 'Sigmar', cursive;
+        }
+
+        /* Dark Mode Support */
+        .dark-mode .header {
+            background: #222;
+            color: #00aaff;
+        }
+
+        /* To prevent content from hiding under fixed header */
+        body {
+            padding-top: 70px;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #0056b3;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .container {
+            background: #1e1e1e;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode h1 {
+            color: #00aaff;
+        }
+
+        .dark-mode .subtitle {
+            color: #bbb;
+        }
+
+        /* Theme Toggle Button */
+       #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 9999; /* Ensures it stays on top */
+}
+
+
+        #theme-toggle:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="theme-toggle">🌙</button>
+
+    <div class="container">
+        <h1>Welcome to Paneer Posting</h1>
+        <p class="subtitle">Connecting brands with content creators seamlessly.</p>
+        <a href="register.html" class="button">Register</a>
+        <a href="login.html" class="button">Login</a>
+    </div>
+
+    <script>
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-toggle').innerHTML = '☀️'; // Sun icon for light mode
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.getElementById('theme-toggle').innerHTML = '🌙'; // Moon icon for dark mode
+            }
+        }
+
+        // Load theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        // Toggle theme on button click
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const newTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+    </script>
+    <footer style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 12px; color: #666;">
+        © 2025 Paneer Posting™. All rights reserved.
+    </footer>
+    <div class="header">Paneer Posting</div>
+</body>
+
+</html>
