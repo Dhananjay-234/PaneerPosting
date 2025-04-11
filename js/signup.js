@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupForm = document.getElementById('signupForm');
     
     closeBtn.addEventListener('click', function() {
-      window.location.href = 'paneerposting.html'; // Redirect to home page
+      window.location.href = 'paneerposting-website.html'; // Redirect to home page
     });
     
     signupForm.addEventListener('submit', function(e) {
