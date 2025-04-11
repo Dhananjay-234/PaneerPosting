@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | PaneerPosting</title>
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">PaneerPosting <span class="admin-tag">Admin</span></div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Campaign Management</h1>
+    </div>
+    
+    <div class="card">
+      <h2>Add New Campaign</h2>
+      <form id="addCampaignForm">
+        <div class="form-group">
+          <label for="campaignTitle">Campaign Title</label>
+          <input type="text" id="campaignTitle" name="campaignTitle" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="campaignDescription">Description</label>
+          <textarea id="campaignDescription" name="campaignDescription" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="campaignBrand">Brand</label>
+          <input type="text" id="campaignBrand" name="campaignBrand" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="campaignBudget">Budget</label>
+          <input type="number" id="campaignBudget" name="campaignBudget" min="0" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="campaignDuration">Duration (days)</label>
+          <input type="number" id="campaignDuration" name="campaignDuration" min="1" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="campaignStatus">Status</label>
+          <select id="campaignStatus" name="campaignStatus" required>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="add-btn">Add Campaign</button>
+      </form>
+    </div>
+    
+    <div class="card">
+      <h2>Current Campaigns</h2>
+      <div id="campaignsList" class="campaigns-list">
+        <!-- Campaigns will be dynamically added here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

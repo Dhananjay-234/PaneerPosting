@@ -1,0 +1,399 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    
+/* display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 50px;
+border-bottom: 1px solid #eee; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    color: #0088cc;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 500px;
+    padding: 50px 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.cta-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* How it Works Section */
+.how-it-works {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.how-it-works p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature h3 {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: #4CAF50;
+}
+
+/* Why Choose Section */
+.why-choose {
+    padding: 80px 0;
+}
+
+.why-choose h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.why-choose p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.benefit h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.benefit-list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.benefit-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.benefit-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+/* Templates Section */
+.templates {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.templates h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.template-types {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.template-type {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.testimonial h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.client-info {
+    margin-top: 30px;
+}
+
+.client-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.client-title {
+    color: #666;
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+ /* Footer */
+ footer {
+    padding: 20px 0;
+    background-color: #f9f7fa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #666;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .features, .benefits, .template-types {
+        flex-direction: column;
+    }
+
+    .feature, .benefit, .template-type {
+        margin-bottom: 20px;
+    }
+}
