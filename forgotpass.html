@@ -80,25 +80,146 @@
       font-size: 14px;
       margin: 20px 0;
     }
+    
+    .step {
+      display: none;
+    }
+    
+    .step.active {
+      display: block;
+    }
+    
+    .success-message {
+      text-align: center;
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+    
+    .otp-field {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    
+    .otp-input {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 18px;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
   <div class="modal">
-    <button class="close-button">×</button>
+    <button class="close-button" onclick="goToStep('step1')">×</button>
     
-    <h1>Forgot Password</h1>
-    
-    <div class="instructions">
-      Enter your email address and we'll send you a link to reset your password.
+    <!-- Step 1: Enter Email -->
+    <div id="step1" class="step active">
+      <h1>Forgot Password</h1>
+      
+      <div class="instructions">
+        Enter your email address and we'll send you a verification code.
+      </div>
+      
+      <div class="form-control">
+        <input type="email" id="email" placeholder="Email or ID" required>
+      </div>
+      
+      <button class="primary-button" onclick="goToStep('step2')">Send Verification Code</button>
+      
+      <a href="login.html" class="back-link">Back to Log In</a>
     </div>
     
-    <div class="form-control">
-      <input type="email" placeholder="Email or ID" required>
+    <!-- Step 2: Enter OTP -->
+    <div id="step2" class="step">
+      <h1>Enter Verification Code</h1>
+      
+      <div class="instructions">
+        Please enter the verification code sent to your email.
+      </div>
+      
+      <div class="otp-field">
+        <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+        <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+        <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+        <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+        <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+        <input type="text" class="otp-input" maxlength="1">
+      </div>
+      
+      <div class="instructions">
+        Didn't receive the code? <a href="#" onclick="resendOTP()">Resend</a>
+      </div>
+      
+      <button class="primary-button" onclick="goToStep('step3')">Verify Code</button>
+      
+      <a href="login.html" class="back-link" onclick="goToStep('step1')">Back</a>
     </div>
     
-    <button class="primary-button">Reset Password</button>
+    <!-- Step 3: Reset Password -->
+    <div id="step3" class="step">
+      <h1>Reset Password</h1>
+      
+      <div class="instructions">
+        Create a new password for your account.
+      </div>
+      
+      <div class="form-control">
+        <input type="password" id="new-password" placeholder="New Password" required>
+      </div>
+      
+      <div class="form-control">
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+      </div>
+      
+      <button class="primary-button" onclick="goToStep('step4')">Reset Password</button>
+      
+      <a href="login.html" class="back-link" onclick="goToStep('step2')">Back</a>
+    </div>
     
-    <a href="login.html" class="back-link">Back to Log In</a>
+    <!-- Step 4: Success -->
+    <div id="step4" class="step">
+      <h1>Password Reset Successful</h1>
+      
+      <div class="success-message">
+        Your password has been reset successfully.
+      </div>
+      
+      <button class="primary-button" onclick="redirectToLogin()">Log In</button>
+    </div>
   </div>
+
+  <script>
+    function goToStep(stepId) {
+      // Hide all steps
+      document.querySelectorAll('.step').forEach(step => {
+        step.classList.remove('active');
+      });
+      
+      // Show the selected step
+      document.getElementById(stepId).classList.add('active');
+    }
+    
+    function moveToNext(field) {
+      if (field.value.length >= field.maxLength) {
+        var next = field.nextElementSibling;
+        if (next) {
+          next.focus();
+        }
+      }
+    }
+    
+    function resendOTP() {
+      alert("Verification code resent to your email.");
+    }
+    
+    function redirectToLogin() {
+      // Redirect to login page
+      alert("Redirecting to login page...");
+    }
+  </script>
 </body>
 </html>
