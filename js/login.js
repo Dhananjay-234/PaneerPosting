@@ -6,11 +6,12 @@ const firebaseConfig = {
   apiKey: "AIzaSyASLKdboiKsUTtiXhTPi7EmUJi_X8wE-Cw",
   authDomain: "paneerposting69.firebaseapp.com",
   projectId: "paneerposting69",
-  storageBucket: "paneerposting69.firebasestorage.app",
+  storageBucket: "paneerposting69.appspot.com", // ✅ fixed this line
   messagingSenderId: "523643036204",
   appId: "1:523643036204:web:7180f2dbfda677abc92789",
   measurementId: "G-1B2DCGQJ01"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
